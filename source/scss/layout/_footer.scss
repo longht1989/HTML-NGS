@@ -1,0 +1,73 @@
+/* ====================================
+   Footer's style
+   ==================================== */
+
+#site-footer {
+    margin-top: 100px;
+    @include clearfix;
+    .site-wrap {
+        border-top: 1px solid #ddd;
+        padding: 30px 15px;
+        @include breakpoint(sm) {
+            padding: 45px 0;
+        }
+    }
+}
+
+.footer {
+    &__nav {
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: right;
+        margin-bottom: 20px;
+        @include breakpoint(sm) {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 40px;
+        }
+        @include breakpoint(md) {
+            // margin-bottom: 0px;
+        }
+        a {
+            &+a {
+                &::before {
+                    content: '|';
+                    display: inline;
+                    margin: 0 10px;
+                    color: #000;
+                    @include breakpoint(sm) {
+                        margin: 0 40px;
+                    }
+                }
+                &:hover {
+                    &::before {
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+    &__info {
+        @include font-size(16, 24);
+        @include breakpoint(sm) {
+            text-align: right;
+        }
+        .sponsor {
+            text-align: right;
+            margin-bottom: 15px;
+            a {
+                display: inline-block;
+                &+a {
+                    margin-left: 10px;
+                }
+            }
+        }
+        p,
+        h4 {
+            margin-bottom: 10px;
+            clear: both;
+        }
+    }
+}

@@ -1,0 +1,128 @@
+#site-content {
+    @include clearfix;
+    margin-bottom: 30px;
+}
+
+.site-wrap {
+    @include breakpoint(xs) {
+        padding: 0 15px;
+    }
+    @include breakpoint(sm) {
+        padding: 0 15px;
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include breakpoint(md) {
+        padding: 0;
+        width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+        @include clearfix();
+    }
+}
+
+.main-col {
+    @include breakpoint(md) {
+        width: 680px;
+        float: left;
+    }
+}
+
+.sidebar-col {
+    @include breakpoint(md) {
+        width: 300px;
+        float: right;
+    }
+}
+
+.zone--highlight {
+    @include breakpoint(md) {
+        @include clearfix;
+        .story--highlight {
+            float: right;
+            width: 440px;
+        }
+        .latest-listing {
+            width: 220px;
+            float: left;
+        }
+    }
+}
+
+.zone-listing {
+    @include clearfix;
+    @include breakpoint(md) {
+        margin-left: -10px;
+        margin-right: -10px;
+        &.two-cols {
+            .zone {
+                width: 50%;
+                float: left;
+                padding: 0 10px;
+            }
+        }
+        &.four-cols {
+            .zone {
+                width: 25%;
+                float: left;
+                padding: 0 10px;
+            }
+        }
+    }
+}
+
+
+/* area style */
+
+.area {
+    @include clearfix;
+    margin-bottom: 20px;
+    .zone {
+        margin-bottom: 0;
+    }
+    &--grey {
+        background: #f2f2f2;
+        .story-listing {
+            @include clearfix;
+            font-size: 0;
+            margin: 0 -5px;
+            li {
+                display: inline-block;
+                width: 50%;
+                vertical-align: top;
+                padding: 0 5px;
+            }
+        }
+        @include breakpoint(md) {
+            .story--featured {
+                padding-bottom: 0;
+                border-bottom: none;
+                width: 330px;
+                float: left;
+            }
+            .story-listing {
+                width: 670px;
+                float: right;
+                margin-left: -10px;
+                margin-right: -10px;
+                li {
+                    padding: 0 10px;
+                    width: 33.33%;
+                }
+            }
+        }
+    }
+    &--special {
+        @extend .area--grey;
+        background: url(../img/special-are-bg.png) left top no-repeat;
+        background-size: cover;
+        .zone__title {
+            background: none;
+        }
+    }
+}
+
+.category__listing {
+    margin-bottom: 20px;
+}

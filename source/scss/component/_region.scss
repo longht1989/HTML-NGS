@@ -1,0 +1,125 @@
+/* ====================================
+   All region in project
+   ==================================== */
+
+
+/* zone global style */
+
+.zone {
+    padding-top: 100px;
+    &+.zone--featured {
+        margin-top: 100px;
+    }
+    &__title {
+        @include font-size(24, 35);
+        position: relative;
+        font-family: $font-family-special;
+        margin-bottom: 50px;
+        text-align: center;
+        text-transform: uppercase; // font-weight: bold;
+        @include breakpoint(md) {}
+    }
+    &__content {
+        @include clearfix();
+    }
+    .area--grey & {
+        .zone__title {
+            padding: 0;
+            &::after {
+                left: 0;
+            }
+        }
+    }
+    .area--special & {
+        .zone__title {
+            a {
+                color: white;
+            }
+        }
+    }
+    &--featured {
+        padding-bottom: 100px; // background: linear-gradient(to right, $brand-info, $brand-warning);
+        background-image: linear-gradient(134deg, #1B558F 9%, #FBAD34 90%);
+        .zone__title,
+        .story__title,
+        .story__summary {
+            color: white;
+        }
+    }
+    &--slider {
+        padding-top: 0; // @include breakpoint(xs) {
+        //     padding-top: 50px;
+        // }
+        .zone__content {
+            position: relative;
+        }
+        @include breakpoint(md) {}
+    }
+    &--secondary {
+        .zone__title {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+    }
+    &--contact {
+        .zone__content {
+            font-size: 18px;
+            line-height: 24px;
+            .company {
+                margin-bottom: 15px;
+            }
+            .text {
+                @include clearfix;
+                margin-bottom: 15px;
+                p {
+                    margin-bottom: 15px;
+                    float: left;
+                    width: calc(100% - 34px);
+                }
+            }
+            .fa {
+                float: left;
+                margin-right: 10px;
+                min-width: 24px;
+                line-height: 24px;
+            }
+            .social-listing {
+                .fa {
+                    width: 32px;
+                    height: 32px;
+                    line-height: 32px;
+                    font-size: 16px;
+                    color: white;
+                    border-radius: 50%;
+                    transition: all 0.2s linear;
+                    text-align: center;
+                    &.fa-facebook {
+                        background-color: #43619C;
+                        &:hover {
+                            background: darken(#43619C, 10%);
+                        }
+                    }
+                    &.fa-google-plus {
+                        background-color: #F24033;
+                        &:hover {
+                            background: darken(#F24033, 10%);
+                        }
+                    }
+                    &.fa-twitter {
+                        background-color: #24A9E6;
+                        &:hover {
+                            background: darken(#24A9E6, 10%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ads
+.qc {
+    @include clearfix();
+    margin-bottom: 20px;
+    text-align: center;
+}
