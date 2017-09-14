@@ -72,9 +72,36 @@
     }
 }
 
+// layout-grid
+.layout-grid {
+    @include clearfix();
+    &-3 {
+        >li {
+            transition: all 0.3s linear;
+            &:hover {
+                background: #fbfbfb;
+            }
+            @include breakpoint(sm) {
+                width: 33.33%;
+                float: left;
+                padding: 50px 80px;
+                &+li {
+                    border-left: 1px solid #f0f0f0;
+                    border-top: 1px solid #f0f0f0;
+                }
+                &:nth-child(3n+1) {
+                    border-left: none;
+                }
+                &:nth-child(2),
+                &:nth-child(3) {
+                    border-top: none;
+                }
+            }
+        }
+    }
+}
 
-/* area style */
-
+// area style
 .area {
     @include clearfix;
     margin-bottom: 20px;

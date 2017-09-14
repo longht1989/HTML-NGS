@@ -19,6 +19,12 @@
         text-transform: uppercase; // font-weight: bold;
         @include breakpoint(md) {}
     }
+    &__sub-title {
+        float: right;
+        color: #E1CB06;
+        font-size: 18px;
+        text-transform: none;
+    }
     &__content {
         @include clearfix();
     }
@@ -113,6 +119,49 @@
                     }
                 }
             }
+        }
+    }
+    &--success {
+        background: $brand-success;
+        .zone__title {
+            color: white;
+        }
+        .nav-tabs {
+            margin-bottom: 50px;
+        }
+        .story__title {
+            text-transform: uppercase;
+            a {
+                color: white;
+                &:hover {
+                    color: $brand-warning;
+                }
+            }
+        }
+        .story__summary {
+            color: white;
+        }
+        .tab-footer {
+            text-align: center;
+            margin: 20px 0 20px;
+            >li {
+                display: inline-block;
+                width: 9px;
+                height: 9px;
+                background: #D8D8D8;
+                margin: 5px 0;
+                border-radius: 50%;
+                opacity: 1;
+                &.active {
+                    background: #363636;
+                }
+            }
+        }
+    }
+    &--grey {
+        background: #EFEFEF;
+        &+.zone--grey {
+            margin-top: 48px;
         }
     }
 }
