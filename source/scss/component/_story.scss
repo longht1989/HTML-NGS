@@ -2,7 +2,10 @@
 
 .story {
     @include clearfix;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+    @include breakpoint(md) {
+        margin-bottom: 24px;
+    }
     &__thumb {
         margin-bottom: 7px;
         overflow: hidden;
@@ -108,7 +111,7 @@
     &--img-shadow {
         position: relative;
         border: none;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
         @include breakpoint(sm) {
             margin-bottom: 50px;
         }
@@ -141,7 +144,7 @@
                 padding: 15px 10px;
                 color: white;
                 display: block;
-                background: rgba(0, 0, 0, 0.2);
+                background: rgba(0, 0, 0, 0.3);
                 border-bottom-left-radius: 5px;
                 border-bottom-right-radius: 5px;
                 letter-spacing: -0.37px;
@@ -188,6 +191,14 @@
             margin-right: 16px;
             margin-bottom: 0;
             float: left;
+            @include breakpoint(xs) {
+                max-width: 33.33%;
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            }
         }
         .story__title {
             max-height: 48px;

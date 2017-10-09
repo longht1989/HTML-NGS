@@ -15,6 +15,13 @@
     }
     @include breakpoint(md) {
         padding: 0;
+        width: 980px;
+        margin-left: auto;
+        margin-right: auto;
+        @include clearfix();
+    }
+    @include breakpoint(lg) {
+        padding: 0;
         width: 1140px;
         margin-left: auto;
         margin-right: auto;
@@ -78,13 +85,14 @@
     &-3 {
         >li {
             transition: all 0.3s linear;
+            padding: 20px;
             &:hover {
                 background: #fbfbfb;
             }
             @include breakpoint(sm) {
                 width: 33.33%;
                 float: left;
-                padding: 50px 80px;
+                padding: 30px 20px;
                 &+li {
                     border-left: 1px solid #f0f0f0;
                     border-top: 1px solid #f0f0f0;
@@ -96,6 +104,9 @@
                 &:nth-child(3) {
                     border-top: none;
                 }
+            }
+            @include breakpoint(md){
+                padding: 50px 80px;
             }
         }
     }
